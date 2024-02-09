@@ -1,0 +1,31 @@
+
+ every node in the tree contains a hash of its children
+
+The leafs of the tree links values from the encoded datasets. 
+Naturally, an asymmetric hash is used not to be able to recover original values.
+
+**The purpose of this data structure is to allow parties to verify consistency of a data set 
+without the need to exchange the dataset itself.
+
+in distributed systems, consistency of replicated data matters and has to be verified,
+    question : why dont we analyze the data itself to see if it's genuine or not? we can but it's impractical and costly considering the size of data
+
+*Merkle Trees prevent malicious or unintentional modifications of the data by providing a unique hash that identifies the data set
+
+Another data set is provably the same only if it computes to the
+same hash, otherwise the data set is different. Due to this feature,
+participants in any data exchange may easily verify that they are getting the data they expect,
+or participants synchronizing data sets may easily verify that they both ended up with the same results.
+
+
+Blockchain platforms in nature involve distributed parties that do not trust, while they need to manage common data.
+In this setting, Merkle trees server as ideal solution as they provide a proof of validity in term of hashes. In addition, the
+hashes are small and thus make it ideal for transfer over the internet.
+
+The Merkle tree originally contains only the hashes while the data set values are stored externally. It means the tree
+is build on top of a dataset, which can be modeled by any alternative data structures
+
+**. Blockchains and Ethereum in particular proposes a structure that wraps all the hashes and the data in one tree
+
+credit : 
+https://arxiv.org/pdf/2108.05513.pdf%5D
